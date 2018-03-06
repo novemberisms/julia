@@ -1,3 +1,6 @@
+![](https://github.com/novemberisms/julia/blob/master/sample1.png)
+![](https://github.com/novemberisms/julia/blob/master/sample2.png)
+![](https://github.com/novemberisms/julia/blob/master/sample3.png)
 # julia
 Simple interactive Julia Set explorer made with LOVE2D
 
