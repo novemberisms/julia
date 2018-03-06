@@ -32,8 +32,7 @@ vec4 effect(vec4 setColor, Image texture, vec2 texture_coords, vec2 pixel_coords
 			is_in = true;
 			break;
 		}
-		
 	}
-	vec4 col = vec4(1.0,1.0,1.0,1.0);
+	vec4 col = vec4(1.0,1.0,1.0,0.0);
 	return is_in? vec4(0,0,0,0.5) : col;
 }

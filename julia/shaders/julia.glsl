@@ -2,6 +2,7 @@ extern float max_iterations = 200.0;
 extern Image palette;
 extern float ca = 0.0;
 extern float cb = 0.0;
+extern bool use_palette = false;
 
 
 vec2 c = vec2(ca,cb);
@@ -43,15 +44,12 @@ vec4 effect(vec4 setColor, Image texture, vec2 texture_coords, vec2 screen_coord
 		}
 		iterations += 1.0;
 	}
-	#ifdef PALLETE_MODE
-	if (is_in) {
-		return vec4(0.0,0.0,0.0,1.0);
+	if (use_palette) {
+    if (is_in) {
+      return vec4(0.0,0.0,0.0,1.0);
+    }
+    vec4 pal_col = Texel(palette, getPalleteCoords(iterations));
+    return pal_col;
 	}
-	return Texel(
-		palette,
-		getPalleteCoords(iterations)
-	);
-	#endif
 	return setColor * getAlphaFromIter(iterations);
-	//return vec4(0.0,0.0,0.0,getAlphaFromIter(iterations));
 }
